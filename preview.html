@@ -158,8 +158,10 @@
       color: hsl(var(--ink-950));
       margin: 0 0 14px;
     }
-    
-    #api .intro h2 {
+
+    #api .intro h2 { display: none; }
+
+    #api h1 {
       font-size: 28px;
       font-weight: 600;
       letter-spacing: -.025em;
@@ -261,9 +263,17 @@
     #api a { color: hsl(var(--brand-700)); text-decoration: none; font-weight: 500; }
     #api a:hover { text-decoration: underline; }
 
+    #api .entry-item { display: flex; flex-direction: column; }
+    #api .entry-item > label { order: 0; }
+    #api .entry-item > .error { order: 1; }
+    #api .entry-item > input,
+    #api .entry-item > select { order: 2; }
+    #api .entry-item > #forgotPassword { order: 3; }
+
     #api #forgotPassword {
       display: inline-block;
-      margin: 2px 0 18px;
+      align-self: flex-start;
+      margin: 8px 0 0;
       font-size: 12.5px;
     }
 
@@ -342,6 +352,7 @@
 
         <div id="api" data-name="unifiedSSP">
           <div class="localAccount">
+            <h1>Sign in</h1>
             <div class="intro"><h2>Sign in with your email address</h2></div>
             <div class="error pageLevel" role="alert"><p>Your password is incorrect.</p></div>
             <div class="entry">
@@ -351,9 +362,9 @@
               </div>
               <div class="entry-item">
                 <label for="password">Password</label>
+                <a id="forgotPassword" href="#">Forgot your password?</a>
                 <input type="password" id="password" placeholder="Password" />
               </div>
-              <a id="forgotPassword" href="#">Forgot your password?</a>
               <div class="buttons"><button id="next" type="submit">Sign in</button></div>
             </div>
             <div class="divider"><h2>OR</h2></div>
@@ -363,7 +374,7 @@
 
         <p class="footnote">
           Trouble signing in? Call Regal on
-          <a href="tel:+6478497800">07 849 7800</a> or email
+          <a href="tel:+6478569149">07 856 9149</a> or email
           <a href="mailto:help@regalgroup.co.nz">help@regalgroup.co.nz</a>.
         </p>
       </div>
