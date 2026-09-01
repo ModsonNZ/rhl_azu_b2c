@@ -170,6 +170,18 @@
       color: hsl(var(--ink-950));
     }
 
+    /*
+     * The self-asserted layouts — password reset, MFA, attribute collection —
+     * wrap their fields in a <ul>, which the sign-in layout does not. Without
+     * this every field on those pages carries a bullet.
+     */
+    #api ul,
+    #api ol {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
     #api .entry-item,
     #api .attrEntry { margin-bottom: 14px; }
 
