@@ -175,6 +175,19 @@
      * wrap their fields in a <ul>, which the sign-in layout does not. Without
      * this every field on those pages carries a bullet.
      */
+    /*
+     * B2C's "What is this?" links, which sit under the email field and the
+     * verification-code button on the self-asserted pages. They open a tooltip
+     * explaining what a verification code is — noise on a page that already
+     * says "Send verification code", and two of them stacked reads as clutter.
+     *
+     * Scoped to the class, NOT to anchors in general: the sign-in page's
+     * "Forgot your password?" is also an anchor inside #api, carries
+     * id="forgotPassword" and no class, and hiding it would strip the only
+     * route to a password reset.
+     */
+    #api .helpLink { display: none; }
+
     #api ul,
     #api ol {
       list-style: none;
