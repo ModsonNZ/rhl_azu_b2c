@@ -102,7 +102,9 @@
     }
 
     .footnote {
-      margin: 28px 0 0;
+      margin: 22px 0 0;
+      padding-top: 18px;
+      border-top: 1px solid hsl(var(--paper-200));
       font-size: 11.5px;
       color: hsl(var(--ink-400));
     }
@@ -294,6 +296,17 @@
     #api .entry-item > input,
     #api .entry-item > select { order: 2; }
     #api .entry-item > #forgotPassword { order: 3; }
+
+    /*
+     * On some page versions B2C wraps the password label and the
+     * forgot-password link together in a .password-label div, which puts the
+     * link beside the label and out of reach of the ordering above.
+     * `display: contents` dissolves that wrapper so both are flex children of
+     * .entry-item again and the same ordering applies.
+     */
+    #api .entry-item > .password-label { display: contents; }
+    #api .password-label > label { order: 0; }
+    #api .password-label > #forgotPassword { order: 3; }
 
     #api #forgotPassword {
       display: inline-block;
